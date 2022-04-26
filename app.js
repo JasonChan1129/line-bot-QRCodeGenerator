@@ -35,8 +35,13 @@ app.post('/webhook', async (req, res) => {
 				},
 				{
 					type: 'image',
-					originalContentUrl: 'https://jasons-line-bot-qr.herokuapp.com/screenshot.png',
-					previewImageUrl: 'https://jasons-line-bot-qr.herokuapp.com/screenshot.png',
+					originalContentUrl:
+						'https://jasons-line-bot-qr.herokuapp.com/screenshot/screenshot.png',
+					previewImageUrl:
+						'https://jasons-line-bot-qr.herokuapp.com/screenshot/screenshot.png',
+					// originalContentUrl:
+					// 	'https://0bf6-114-44-52-13.jp.ngrok.io/screenshot/screenshot.png',
+					// previewImageUrl: 'https://0bf6-114-44-52-13.jp.ngrok.io/screenshot/screenshot.png',
 				},
 			],
 		});

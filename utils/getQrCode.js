@@ -14,6 +14,7 @@ async function getQrCode() {
 	// 	path: 'app/public/screenshot/screenshot.png',
 	// });
 	await browser.close();
+	console.log('function finished executing');
 }
 
 module.exports = getQrCode;

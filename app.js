@@ -25,6 +25,7 @@ app.post('/webhook', async (req, res) => {
 	// if the user sends a message to the bot, reply through sending a POST request to line api endpoint
 	if (req.body.events[0].type === 'message') {
 		await getQrCode();
+		console.log('got qr');
 		// define request body
 		const dataString = JSON.stringify({
 			replyToken: req.body.events[0].replyToken,

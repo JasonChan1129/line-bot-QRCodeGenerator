@@ -26,7 +26,7 @@ app.post('/webhook', async (req, res) => {
 	// if the user sends a message to the bot, reply through sending a POST request to line api endpoint
 	if (req.body.events[0].type === 'message') {
 		console.log('got qr');
-		await getQrCode();
+		// await getQrCode();
 		// define request body
 		const dataString = JSON.stringify({
 			replyToken: req.body.events[0].replyToken,
@@ -35,16 +35,16 @@ app.post('/webhook', async (req, res) => {
 					type: 'text',
 					text: 'Welcome! Please note that the qr code will be expired in 5 minutes.',
 				},
-				{
-					type: 'image',
-					originalContentUrl:
-						'https://jasons-line-bot-qr.herokuapp.com/screenshot/screenshot.png',
-					previewImageUrl:
-						'https://jasons-line-bot-qr.herokuapp.com/screenshot/screenshot.png',
-					// originalContentUrl:
-					// 	'https://0bf6-114-44-52-13.jp.ngrok.io/screenshot/screenshot.png',
-					// previewImageUrl: 'https://0bf6-114-44-52-13.jp.ngrok.io/screenshot/screenshot.png',
-				},
+				// {
+				// 	type: 'image',
+				// 	originalContentUrl:
+				// 		'https://jasons-line-bot-qr.herokuapp.com/screenshot/screenshot.png',
+				// 	previewImageUrl:
+				// 		'https://jasons-line-bot-qr.herokuapp.com/screenshot/screenshot.png',
+				// 	// originalContentUrl:
+				// 	// 	'https://0bf6-114-44-52-13.jp.ngrok.io/screenshot/screenshot.png',
+				// 	// previewImageUrl: 'https://0bf6-114-44-52-13.jp.ngrok.io/screenshot/screenshot.png',
+				// },
 			],
 		});
 

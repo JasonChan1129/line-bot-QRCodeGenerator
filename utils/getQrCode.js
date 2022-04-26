@@ -5,8 +5,7 @@ async function getQrCode() {
 	console.log('execute get qr code');
 	const browser = await puppeteer.launch({
 		headless: true,
-		executablePath: '/usr/bin/chromium-browser',
-		args: ['--no-sandbox', '--disable-setuid-sandbox'],
+		args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
 	});
 	const page = await browser.newPage();
 	await page.goto(`https://www.topworld.com.tw/qrlogin?id=${process.env.ID}`);

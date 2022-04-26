@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const https = require('https');
+const getQrCode = require('./utils/getQrCode');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -20,9 +21,10 @@ app.get('/', (req, res) => {
 });
 
 // when users interact with the bot, the line platform server sends a HTTP POST request to this route
-app.post('/webhook', (req, res) => {
+app.post('/webhook', async (req, res) => {
 	// if the user sends a message to the bot, reply through sending a POST request to line api endpoint
 	if (req.body.events[0].type === 'message') {
+		await getQrCode();
 		// define request body
 		const dataString = JSON.stringify({
 			replyToken: req.body.events[0].replyToken,

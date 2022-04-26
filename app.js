@@ -17,7 +17,6 @@ app.use(
 );
 
 app.get('/', (req, res) => {
-	console.log('hello!');
 	res.send('You has reached my server');
 });
 
@@ -35,16 +34,16 @@ app.post('/webhook', async (req, res) => {
 					type: 'text',
 					text: 'Welcome! Please note that the qr code will be expired in 5 minutes.',
 				},
-				// {
-				// 	type: 'image',
-				// 	originalContentUrl:
-				// 		'https://jasons-line-bot-qr.herokuapp.com/screenshot/screenshot.png',
-				// 	previewImageUrl:
-				// 		'https://jasons-line-bot-qr.herokuapp.com/screenshot/screenshot.png',
-				// 	// originalContentUrl:
-				// 	// 	'https://0bf6-114-44-52-13.jp.ngrok.io/screenshot/screenshot.png',
-				// 	// previewImageUrl: 'https://0bf6-114-44-52-13.jp.ngrok.io/screenshot/screenshot.png',
-				// },
+				{
+					type: 'image',
+					originalContentUrl:
+						'https://jasons-line-bot-qr.herokuapp.com/screenshot/screenshot.png',
+					previewImageUrl:
+						'https://jasons-line-bot-qr.herokuapp.com/screenshot/screenshot.png',
+					// 	// originalContentUrl:
+					// 	// 	'https://0bf6-114-44-52-13.jp.ngrok.io/screenshot/screenshot.png',
+					// 	// previewImageUrl: 'https://0bf6-114-44-52-13.jp.ngrok.io/screenshot/screenshot.png',
+				},
 			],
 		});
 

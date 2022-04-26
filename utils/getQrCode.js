@@ -2,7 +2,15 @@
 const puppeteer = require('puppeteer');
 
 async function getQrCode() {
-	const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
+	const browser = await puppeteer.launch({
+		headless: true,
+		args: [
+			'--no-sandbox',
+			'--disable-setuid-sandbox',
+			'--disable-dev-shm-usage',
+			'--single-process',
+		],
+	});
 	const page = await browser.newPage();
 	await page.goto(`https://www.topworld.com.tw/qrlogin?id=${process.env.ID}`);
 	await page.waitForSelector("button[class='_1fbEI']");

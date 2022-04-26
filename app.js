@@ -17,6 +17,7 @@ app.use(
 );
 
 app.get('/', (req, res) => {
+	console.log('hello!');
 	res.send('You has reached my server');
 });
 

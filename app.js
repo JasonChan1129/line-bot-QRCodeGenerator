@@ -31,11 +31,12 @@ app.post('/webhook', async (req, res) => {
 			messages: [
 				{
 					type: 'text',
-					text: 'Hello, user',
+					text: 'Welcome! Please note that the qr code will be expired in 5 minutes.',
 				},
 				{
-					type: 'text',
-					text: 'May I help you?',
+					type: 'image',
+					originalContentUrl: 'https://0bf6-114-44-52-13.jp.ngrok.io/screenshot.png',
+					previewImageUrl: 'https://0bf6-114-44-52-13.jp.ngrok.io/screenshot.png',
 				},
 			],
 		});

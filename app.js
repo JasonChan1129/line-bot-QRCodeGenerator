@@ -19,8 +19,11 @@ app.get('/', (req, res) => {
 	res.send('You has reached my server');
 });
 
+// when users interact with the bot, the line platform server sends a HTTP POST request to this route
 app.post('/webhook', (req, res) => {
+	// if the user sends a message to the bot, reply through sending a POST request to line api endpoint
 	if (req.body.events[0].type === 'message') {
+		// define request body
 		const dataString = JSON.stringify({
 			replyToken: req.body.events[0].replyToken,
 			messages: [

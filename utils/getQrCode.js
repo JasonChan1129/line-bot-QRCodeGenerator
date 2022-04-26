@@ -11,7 +11,7 @@ async function getQrCode() {
 	await page.waitForSelector("a[class='VNb9p']");
 	// const QRcode = await page.$('._13Lxq');
 	await page.screenshot({
-		path: 'https://jasons-line-bot-qr.herokuapp.com/public/screenshot/screenshot.png',
+		path: 'app/public/screenshot/screenshot.png',
 	});
 	await browser.close();
 }

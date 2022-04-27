@@ -3,7 +3,7 @@ const puppeteer = require('puppeteer');
 
 async function getQrCode() {
 	console.log('execute get qr code');
-	console.log('path', process.cwd);
+	console.log('path', process.cwd());
 	const browser = await puppeteer.launch({
 		headless: true,
 		args: ['--no-sandbox'],

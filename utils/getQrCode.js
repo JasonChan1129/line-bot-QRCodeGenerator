@@ -23,7 +23,7 @@ async function getQrCode() {
 		await browser.close();
 		console.log('function finished executing');
 	} catch (error) {
-		console.log(error);
+		return error;
 	}
 }
 

@@ -1,3 +1,4 @@
+// dotenv is only required when running on local environment
 // require('dotenv').config();
 const express = require('express');
 const https = require('https');
@@ -40,9 +41,6 @@ app.post('/webhook', async (req, res) => {
 						'https://jasons-line-bot-qr.herokuapp.com/screenshot/screenshot.png',
 					previewImageUrl:
 						'https://jasons-line-bot-qr.herokuapp.com/screenshot/screenshot.png',
-					// 	// originalContentUrl:
-					// 	// 	'https://0bf6-114-44-52-13.jp.ngrok.io/screenshot/screenshot.png',
-					// 	// previewImageUrl: 'https://0bf6-114-44-52-13.jp.ngrok.io/screenshot/screenshot.png',
 				},
 			],
 		});

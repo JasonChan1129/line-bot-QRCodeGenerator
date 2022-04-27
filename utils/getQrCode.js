@@ -1,3 +1,4 @@
+// dotenv is only required when running on local environment
 // require('dotenv').config({ path: '../.env' });
 const puppeteer = require('puppeteer');
 

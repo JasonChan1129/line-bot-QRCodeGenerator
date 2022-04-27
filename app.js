@@ -25,14 +25,17 @@ app.get('/', (req, res) => {
 app.post('/webhook', async (req, res) => {
 	// if the user sends a message to the bot, reply through sending a POST request to line api endpoint
 	if (req.body.events[0].type === 'message') {
-		await getQrCode();
+		const error = await getQrCode();
+		const replyText = error
+			? 'Sorry, some error occured. Please try again.'
+			: 'Welcome! Please note that the qr code will be expired in 5 minutes.';
 		// define request body
 		const dataString = JSON.stringify({
 			replyToken: req.body.events[0].replyToken,
 			messages: [
 				{
 					type: 'text',
-					text: 'Welcome! Please note that the qr code will be expired in 5 minutes.',
+					text: replyText,
 				},
 				{
 					type: 'image',

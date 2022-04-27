@@ -16,7 +16,7 @@ async function getQrCode() {
 	await page.waitForSelector("a[class='VNb9p']");
 	// const QRcode = await page.$('._13Lxq');
 	await page.screenshot({
-		path: './app/public/screenshot/screenshot.png',
+		path: '/app/public/screenshot/screenshot.png',
 	});
 	await browser.close();
 	console.log('function finished executing');
